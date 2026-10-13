@@ -1,2 +1,38 @@
 @charset "utf-8";
 @namespace epub "http://www.idpf.org/2007/ops";
+
+/* begin song blockquote */
+[epub|type~="z3998:song"] p{
+	text-align: initial;
+	text-indent: 0;
+}
+
+[epub|type~="z3998:song"] p > span{
+	display: block;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+/* end song blockquote */
+
+/* begin letters and notes */
+footer{
+	margin-top: 1em;
+	text-align: right;
+}
+
+[epub|type~="z3998:salutation"] + p{
+	text-indent: 0;
+}
+
+p[epub|type~="z3998:salutation"]{
+	font-variant: small-caps;
+}
+
+#chapter-10 blockquote p{
+	text-indent: 1em;
+}
+
+[epub|type~="z3998:signature"]{
+	font-variant: small-caps;
+}
+/* end letters and notes */
