@@ -39,7 +39,9 @@ p[epub|type~="z3998:salutation"]{
 
 /* Begin ch 9 table */
 table{
-	counter-reset: item ltr;
+	border-collapse: separate;
+	border-spacing: 0 .75em;
+	counter-reset: rownum rowltr;
 	margin: 1em auto;
 }
 
@@ -54,37 +56,28 @@ tr{
 	vertical-align: top;
 }
 
-td + td{
-	padding-left: 1em;
-}
-
 td{
 	text-indent: 1em;
 }
 
-ol{
-	list-style: none;
-	margin-top: 0;
+td + td{
+	padding-left: 1em;
 }
 
-/* outer list numbered */
-ol > li::before{
-	content: "(" counter(item) ") ";
-	counter-increment: item;
+tr td:first-child::before{
+	content: "(" counter(rownum) ") ";
+	counter-increment: rownum;
 	float: left;
 	text-indent: 1em;
 }
 
-/* nested ordered list with alpha */
-ol ol > li::before{
-	content: "(" counter(ltr, lower-alpha) ") ";
-	counter-increment: ltr;
+tr:nth-child(12) td:first-child::before,
+tr:nth-child(13) td:first-child::before,
+tr:nth-child(14) td:first-child::before{
+	content: "(" counter(rowltr, lower-alpha) ") ";
+	counter-increment: rowltr;
+	counter-reset: rownum 11;
 	float: left;
-	text-indent: 1em;
-}
-
-/* reset outer list numbers after lines with nested alpha ordered list */
-ol ol > li{
-	counter-reset: item 11;
+	text-indent: 2em;
 }
 /* End ch 9 table */
