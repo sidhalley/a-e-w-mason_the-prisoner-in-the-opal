@@ -36,3 +36,55 @@ p[epub|type~="z3998:salutation"]{
 	font-variant: small-caps;
 }
 /* end letters and notes */
+
+/* Begin ch 9 table */
+table{
+	counter-reset: item ltr;
+	margin: 1em auto;
+}
+
+th{
+	font-weight: normal;
+	letter-spacing: .1em;
+	padding-bottom: 1em;
+	text-transform: uppercase;
+}
+
+tr{
+	vertical-align: top;
+}
+
+td + td{
+	padding-left: 1em;
+}
+
+td{
+	text-indent: 1em;
+}
+
+ol{
+	list-style: none;
+	margin-top: 0;
+}
+
+/* outer list numbered */
+ol > li::before{
+	content: "(" counter(item) ") ";
+	counter-increment: item;
+	float: left;
+	text-indent: 1em;
+}
+
+/* nested ordered list with alpha */
+ol ol > li::before{
+	content: "(" counter(ltr, lower-alpha) ") ";
+	counter-increment: ltr;
+	float: left;
+	text-indent: 1em;
+}
+
+/* reset outer list numbers after lines with nested alpha ordered list */
+ol ol > li{
+	counter-reset: item 11;
+}
+/* End ch 9 table */
