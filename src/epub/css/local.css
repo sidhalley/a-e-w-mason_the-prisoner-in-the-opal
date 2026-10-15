@@ -23,6 +23,10 @@
 	text-indent: 0;
 }
 
+#chapter-24 blockquote p{
+	text-indent: 0;
+}
+
 footer{
 	margin-top: 1em;
 	text-align: right;
