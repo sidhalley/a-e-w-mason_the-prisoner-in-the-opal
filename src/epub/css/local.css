@@ -15,21 +15,26 @@
 /* end song blockquote */
 
 /* begin letters and notes */
+#chapter-10 blockquote{
+	font-style: italic;
+}
+#chapter-10 blockquote p{
+	text-indent: 0;
+}
+
 footer{
 	margin-top: 1em;
 	text-align: right;
 }
 
-[epub|type~="z3998:salutation"] + p{
+[epub|type~="z3998:letter"] + p,
+p[epub|type~="z3998:salutation"]{
 	text-indent: 0;
 }
 
 p[epub|type~="z3998:salutation"]{
 	font-variant: small-caps;
-}
-
-#chapter-10 blockquote p{
-	text-indent: 1em;
+	font-style: normal;
 }
 
 [epub|type~="z3998:signature"]{
@@ -76,8 +81,10 @@ tr:nth-child(13) td:first-child::before,
 tr:nth-child(14) td:first-child::before{
 	content: "(" counter(rowltr, lower-alpha) ") ";
 	counter-increment: rowltr;
-	counter-reset: rownum 11;
 	float: left;
 	text-indent: 2em;
+}
+tr:nth-child(14) td:first-child::before{
+	counter-reset: rownum 11;
 }
 /* End ch 9 table */
