@@ -71,7 +71,7 @@
 		<dc:contributor id="artist">Alfred Henry Maurer</dc:contributor>
 		<meta property="file-as" refines="#artist">Maurer, Alfred Henry</meta>
 		<link href="https://en.wikipedia.org/wiki/Alfred_Henry_Maurer" refines="#artist" rel="schema:sameAs"/>
-		<link href="http://id.loc.gov/authorities/names/n79079464" refines="#artist" rel="schema:sameAs"/>
+		<link href="https://id.loc.gov/authorities/names/n79079464.html" refines="#artist" rel="schema:sameAs"/>
 		<meta property="role" refines="#artist" scheme="marc:relators">art</meta>
 		<dc:contributor id="transcriber-1">Al Haines</dc:contributor>
 		<meta property="file-as" refines="#transcriber-1">Haines, Al</meta>
