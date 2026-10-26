@@ -1,5 +1,6 @@
 @charset "utf-8";
 @namespace epub "http://www.idpf.org/2007/ops";
+@namespace xml "http://www.w3.org/XML/1998/namespace";
 
 /* begin song blockquote */
 [epub|type~="z3998:song"] p{
@@ -19,10 +20,7 @@
 	font-style: italic;
 }
 
-#chapter-10 blockquote p{
-	text-indent: 0;
-}
-
+#chapter-10 blockquote p,
 #chapter-24 blockquote p{
 	text-indent: 0;
 }
@@ -66,10 +64,6 @@ tr{
 	vertical-align: top;
 }
 
-td{
-	text-indent: 1em;
-}
-
 td + td{
 	padding-left: 1em;
 }
@@ -78,7 +72,12 @@ tr td:first-child::before{
 	content: "(" counter(rownum) ") ";
 	counter-increment: rownum;
 	float: left;
-	text-indent: 1em;
+}
+
+tr:nth-child(12) td:first-child p,
+tr:nth-child(13) td:first-child p,
+tr:nth-child(14) td:first-child p{
+	margin-left: 2em;
 }
 
 tr:nth-child(12) td:first-child::before,
